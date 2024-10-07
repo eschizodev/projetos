@@ -1,0 +1,53 @@
+body {
+    background-image: url(https://i.pinimg.com/564x/82/c7/e5/82c7e54d34efd443ec854eae9db1a60e.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    backdrop-filter: blur(6px);
+}
+
+.banner {
+    height: 2cm;
+    backdrop-filter: blur(6px);
+    background-color: rgba(27, 25, 25, 0.61);
+}
+
+.banner h1 {
+    color: rgb(243, 243, 243);
+    height: 4vh;
+}
+
+.card {
+    margin: 14px;
+    border: 0px solid #000000;
+    border-radius: 9px;
+    transition: transform 0.2s;
+    backdrop-filter: blur(1px);
+    background-color: rgba(255, 253, 253, 0.404);
+    box-shadow: 8px 4px 7px rgba(0, 0, 0, 0.301);
+    font-weight: bold; 
+    font-display: rgb(0, 0, 0);
+    border-width: 1px;
+    border-style: ridge;
+    display: flex;
+}
+.card:hover {
+    transform: scale(1.05);
+}
+
+.limited-description {
+    max-height: 50px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+
+}
+
+.price {
+    color: rgb(0, 0, 0);
+}
+
+footer {
+    backdrop-filter: blur(8px);
+    background-color: rgba(0, 0, 0, 0.7);
+}
