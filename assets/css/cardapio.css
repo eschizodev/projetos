@@ -52,8 +52,11 @@ body {
 footer {
     backdrop-filter: blur(8px);
     background-color: rgba(0, 0, 0, 0.719);
-    height: 50px;
-
+    height: 60px;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    color: white; 
 }
 body {
     margin: 0;
@@ -124,7 +127,7 @@ body {
     justify-content: center;
     align-items: center;
     z-index: 9999;
-    display: none; /* Começa como invisível */
+    display: none; 
 }
 
 .spinner-border {
