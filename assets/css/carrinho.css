@@ -11,3 +11,8 @@ body {
         background-color: rgba(27, 25, 25, 0.61);
     }
 
+.banner { height: 2cm;
+    backdrop-filter: blur(6px);
+    background-color: rgba(27, 25, 25, 0.61);}
+
+
