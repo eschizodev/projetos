@@ -7,30 +7,66 @@
     <title>Pedro's 2007 Burguer</title>
    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    
-    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/cardapio.css">
 
-
-</head>
-<body>
     <style>
+        .cart-button {
+            position: fixed;
+            bottom: 123px;
+            right: 256px;
+            background-color: #404741a6;
+            color: white;
+            border: none;
+            padding: 20px 40px;
+            border-radius: 30px;
+            font-size: 26px;
+            cursor: pointer;
+            z-index: 10;
+            transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+        }
+
+        .cart-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar-brand {
+            width: 100%;
+            text-align: center;
+        }
+
+        .navbar-brand img {
+            display: block;
+            margin: 0 auto;
+        }
+
         #loading {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(48, 44, 44, 0.9);
+            background-color: rgba(0, 0, 0, 0.5);
             display: flex;
             justify-content: center;
             align-items: center;
-            z-index: 9; 
+            z-index: 9999;
+            display: none;
         }
-        #loading img {
-            width: 100px; 
+
+        .spinner-border {
+            width: 3rem;
+            height: 3rem;
+            color: white;
         }
     </style>
+</head>
+<body>
+    
     <div id="loading">
+        <div class="spinner-border" role="status" aria-hidden="true">
+            <span class="visually-hidden">Carregando...</span>
+        </div>
     </div>
 
     <nav class="navbar navbar-expand-lg navbar-dark">
@@ -38,29 +74,19 @@
             <a class="navbar-brand" href="#">
                 <img src="https://raw.githubusercontent.com/iragodevens/projeto_seduc/refs/heads/main/logo.jfif" width="95">
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbar-nav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                    </li>
-                </ul>
-            </div>
         </div>
     </nav>
+
     <section class="banner text-center text-light d-flex justify-content-center align-items-center">
         <div>
-            <h1>Bem-vindo ao nosso cardápio</h1>
-            <p>
-            </p>
+            <h1 style="color:white;">Bem-vindo ao nosso cardápio</h1>
         </div>
     </section>
-    <link rel="stylesheet" href="style.css">
+
     <section id="menu" class="container my-5">
         <h2 class="text-center"></h2>
         <div class="row mt-4">
-            
+            <!-- Cards de itens do cardápio -->
             <div class="col-md-4 mb-4">
                 <div class="card h-100">
                     <a href="cheeseburger.html">
@@ -70,9 +96,11 @@
                         <h5 class="card-title">Cheeseburger Clássico</h5>
                         <p class="card-text limited-description">Delicioso cheeseburger com queijo cheddar, alface, tomate e maionese especial.</p>
                         <p class="price">R$ 25,00</p>
+                        <button class="btn btn-primary add-to-cart" data-name="Cheeseburger Clássico" data-price="25.00">Adicionar ao Carrinho</button>
                     </div>
                 </div>
             </div>
+
             <div class="col-md-4 mb-4">
                 <div class="card h-100">
                     <a href="duplo-bacon.html">
@@ -82,21 +110,25 @@
                         <h5 class="card-title">Hambúrguer Duplo Bacon</h5>
                         <p class="card-text limited-description">Dois hambúrgueres suculentos, bacon crocante, queijo e molho barbecue.</p>
                         <p class="price">R$ 32,00</p>
+                        <button class="btn btn-primary add-to-cart" data-name="Hambúrguer Duplo Bacon" data-price="32.00">Adicionar ao Carrinho</button>
                     </div>
                 </div>
             </div>
+
             <div class="col-md-4 mb-4">
                 <div class="card h-100">
                     <a href="moda-da-casa.html">
                         <img src="https://img.freepik.com/fotos-premium/hamburguer-em-fotografia-de-comida-de-fundo-preto_131346-973.jpg" class="card-img-top" alt="A Moda da Casa">
-                    </a> 
+                    </a>
                     <div class="card-body">
                         <h5 class="card-title">A Moda da Casa</h5>
                         <p class="card-text limited-description">Delicioso cheeseburger com queijo cheddar, alface, tomate e maionese especial.</p>
                         <p class="price">R$ 25,00</p>
+                        <button class="btn btn-primary add-to-cart" data-name="A Moda da Casa" data-price="25.00">Adicionar ao Carrinho</button>
                     </div>
                 </div>
-            </div>            
+            </div>
+
             <div class="col-md-4 mb-4">
                 <div class="card h-100">
                     <a href="hamburguer-vegano.html">
@@ -106,9 +138,11 @@
                         <h5 class="card-title">Hambúrguer Vegano</h5>
                         <p class="card-text limited-description">Hambúrguer à base de grão-de-bico, com molho especial e vegetais frescos.</p>
                         <p class="price">R$ 30,00</p>
+                        <button class="btn btn-primary add-to-cart" data-name="Hambúrguer Vegano" data-price="30.00">Adicionar ao Carrinho</button>
                     </div>
                 </div>
             </div>
+
             <div class="col-md-4 mb-4">
                 <div class="card h-100">
                     <a href="frango-grelhado.html">
@@ -118,9 +152,11 @@
                         <h5 class="card-title">Hambúrguer do Chefe Grelhado</h5>
                         <p class="card-text limited-description">Frango grelhado com abacate, alface e molho de iogurte.</p>
                         <p class="price">R$ 28,00</p>
+                        <button class="btn btn-primary add-to-cart" data-name="Hambúrguer do Chefe Grelhado" data-price="28.00">Adicionar ao Carrinho</button>
                     </div>
                 </div>
             </div>
+
             <div class="col-md-4 mb-4">
                 <div class="card h-100">
                     <a href="picanha.html">
@@ -130,25 +166,71 @@
                         <h5 class="card-title">Hambúrguer de Picanha</h5>
                         <p class="card-text limited-description">Picanha grelhada com queijo prato e cebola caramelizada.</p>
                         <p class="price">R$ 35,00</p>
+                        <button class="btn btn-primary add-to-cart" data-name="Hambúrguer de Picanha" data-price="35.00">Adicionar ao Carrinho</button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <button class="cart-button" id="cart-btn">
+        Ir ao Carrinho
+    </button>
+
     <footer class="text-light text-center py-2">
         <p>&copy; 2024 Pedro Burguer - Todos os direitos reservados</p>
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/jquery.mask.min.js"></script>
-    <script src="js/main.js"></script>
 
     <script>
-        
-        $(window).on('load', function() {
-            $('#loading').fadeOut('slow');
+        function showLoading() {
+            console.log("Mostrando a tela de carregamento");
+            document.getElementById('loading').style.display = 'flex';
+        }
+
+        function hideLoading() {
+            console.log("Ocultando a tela de carregamento");
+            document.getElementById('loading').style.display = 'none';
+        }
+
+        document.getElementById('cart-btn').addEventListener('click', function() {
+            showLoading();
+            setTimeout(function() {
+                window.location.href = 'carrinho.html';
+            }, 1500); 
         });
+
+        window.addEventListener('load', function() {
+            hideLoading();
+        });
+
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', () => {
+                showLoading(); 
+                const name = button.getAttribute('data-name');
+                const price = parseFloat(button.getAttribute('data-price'));
+
+                let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+                cartItems.push({ name, price });
+                localStorage.setItem('cartItems', JSON.stringify(cartItems));
+
+                setTimeout(() => {
+                    updateCartTotal();
+                    hideLoading(); 
+                }, 1000); 
+            });
+        });
+
+        function updateCartTotal() {
+            console.log("Atualizando o total do carrinho");
+            const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+            let total = cartItems.reduce((acc, item) => acc + item.price, 0);
+            document.getElementById('cart-total').innerText = 'Total: R$ ' + total.toFixed(2); 
+        }
     </script>
+
+    <script src="script.js"></script>
 </body>
 </html>
