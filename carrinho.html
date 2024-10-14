@@ -143,7 +143,12 @@
 
                     message += `Total: R$ ${total.toFixed(2)}`;
                     const whatsappMessage = encodeURIComponent(message);
-                    const whatsappUrl = `https://api.whatsapp.com/send?text=5511976957345${whatsappMessage}`;
+                    // const whatsappUrl = `https://api.whatsapp.com/send?text=${whatsappMessage}`;
+                    const whatsappNumber = '+5569993193223';
+                    const whatsappUrl = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent(whatsappMessage)}`;
+
+console.log(whatsappUrl);
+
 
                     window.open(whatsappUrl);
                 });
